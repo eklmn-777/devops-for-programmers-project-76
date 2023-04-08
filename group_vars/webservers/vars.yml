@@ -1,0 +1,16 @@
+db_address: "{{ vault_db_address }}"
+db_port: "{{ vault_db_port }}"
+db_username: "{{ vault_db_username }}"
+db_name: "{{ vault_db_name }}"
+db_password: "{{ vault_db_password }}"
+
+datadog_api_key: "{{ vault_datadog_api_key }}"
+datadog_site: "datadoghq.eu"
+datadog_checks:
+  http_check:
+    init_config:
+    instances:
+      - name: http_check
+        url: "http://localhost:{{ app_port }}"
+        timeout: 5
+        method: GET
