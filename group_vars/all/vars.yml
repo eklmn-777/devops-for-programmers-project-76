@@ -1,0 +1,9 @@
+app_port: 32000
+datadog_checks:
+  http_check:
+    init_config:
+    instances:
+      - name: http_check
+        url: "http://localhost:{{ app_port }}"
+        timeout: 5
+        method: GET
